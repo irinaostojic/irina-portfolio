@@ -1,13 +1,9 @@
-/* ========================================================= */
-/* VARIABLES DE COLOR Y TIPOGRAFÍA */
-/* ========================================================= */
 :root {
-    --color-primario: #0A3C5F;      /* Azul Neptuno */
-    --color-secundario: #D9644A;    /* Rojo Terracota */
-    --color-acento: #FFC857;        /* Amarillo Mostaza */
-    --color-fondo: #F5F1EA;         /* Hueso Roto */
-    --color-texto: #333;            /* Gris oscuro */
-    --font-principal: "Poppins", Arial, sans-serif;
+    --mostaza: #D8B75A;
+    --terracota: #C45A3C;
+    --azul: #1F4E5F;
+    --hueso: #FAF7F2;
+    --texto: #3A3A3A;
 }
 
 html {
@@ -16,55 +12,41 @@ html {
 
 body {
     margin: 0;
-    font-family: var(--font-principal);
-    color: var(--color-texto);
-    background-color: var(--color-fondo);
+    font-family: "Poppins", Arial, sans-serif;
+    color: var(--texto);
+    background-color: var(--hueso);
 }
 
-/* ========================================================= */
-/* NAVBAR */
-/* ========================================================= */
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(10, 60, 95, 0.92);
+    background: rgba(216, 183, 90, 0.95); /* mostaza */
     backdrop-filter: blur(6px);
     z-index: 100;
 }
 
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-}
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
 
 .nav-links a {
-    color: white;
+    color: var(--azul);
     text-decoration: none;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .nav-links a:hover {
-    opacity: 0.8;
+    color: var(--terracota);
 }
 
-/* ========================================================= */
-/* HERO */
-/* ========================================================= */
+
+
 .hero {
     height: 88vh;
-    background-image: url("https://raw.githubusercontent.com/irinaostojic/irina-portfolio/main/fondo.png"); 
+    background-image: url("https://raw.githubusercontent.com/irinaostojic/irina-portfolio/main/fondo.png");
     background-size: cover;
-    background-position: center top;
+    background-position: center;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
@@ -77,14 +59,14 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(245, 241, 234, 0.6); /* Overlay cálido */
+    background: rgba(196, 90, 60, 0.55); /* terracota translúcido */
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     text-align: center;
-    color: var(--color-primario);
+    color: var(--hueso);
     max-width: 800px;
 }
 
@@ -103,19 +85,19 @@ body {
 .btn-primary {
     padding: 12px 26px;
     border-radius: 999px;
-    background: var(--color-acento);
-    color: var(--color-fondo);
+    background: var(--mostaza);
+    color: var(--azul);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
 }
 
 .btn-primary:hover {
-    background: #FFD976; /* Mostaza más suave al pasar mouse */
+    background: var(--terracota);
+    color: white;
 }
 
-/* ========================================================= */
-/* SECCIONES */
+
 .section {
     max-width: 900px;
     margin: 80px auto;
@@ -123,178 +105,40 @@ body {
 }
 
 .section h2 {
-    font-size: 30px;
-    margin-bottom: 18px;
-    color: var(--color-primario);
-}
-
-/* ========================================================= */
-/* PROYECTOS */
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
+    color: var(--azul);
 }
 
 .project-card {
-    border: 1px solid var(--color-secundario);
-    padding: 20px;
-    border-radius: 12px;
-    background: white;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid var(--terracota);
 }
 
 .project-card h3 {
-    color: var(--color-primario);
-    margin-bottom: 10px;
-}
-
-.project-card p {
-    margin-bottom: 14px;
-    line-height: 1.5;
-    text-align: left;
+    color: var(--azul);
 }
 
 .project-card a {
-    color: var(--color-primario);
-    font-weight: 600;
-    text-decoration: none;
+    color: var(--terracota);
 }
 
-/* ========================================================= */
-/* CONTACTO */
-#contacto p a {
-    font-weight: 600;
-}
-
-/* ========================================================= */
-/* FOOTER */
-.footer {
-    border-top: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-}
-
-/* ========================================================= */
-/* RESPONSIVE */
-@media (max-width: 600px) {
-    .nav-links {
-        gap: 10px;
-        white-space: nowrap;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-        margin: 0 6px;
-    }
-
-    .hero {
-        height: 75vh;
-        padding: 0 12px;
-        margin-top: 55px;
-    }
-
-    .hero-content h1 {
-        font-size: 34px;
-    }
-
-    .hero-content h2 {
-        font-size: 18px;
-    }
-
-    .btn-primary {
-        font-size: 14px;
-        padding: 10px 22px;
-    }
-
-    .section {
-        margin: 60px auto;
-    }
-
-    .project-card {
-        padding: 16px;
-    }
-}
-
-@media (max-width: 450px) {
-    .nav-links a {
-        font-size: 12px;
-        margin: 0 4px;
-    }
-}
-
-/* ========================================================= */
 /* PERFIL */
+
 #perfil p {
-    text-align: justify !important;
-    max-width: 720px;
-    margin: 0 auto 1.2rem auto;
-    line-height: 1.6;
+    text-align: justify;
 }
 
-/* ========================================================= */
-/* INTRODUCTORIO */
-.proyectos-intro {
-    text-align: justify !important;
-    max-width: 700px;
-    margin: 0 auto 25px auto;
-    line-height: 1.55;
-    font-size: 17px;
-    color: #444;
-}
 
-/* ========================================================= */
-/* TECH STACK */
-#tech-stack {
-    margin-top: 80px;
-}
-
-.tech-stack-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-}
 
 .tech-category {
-    border: 1px solid var(--color-secundario);
-    border-radius: 12px;
-    padding: 20px 22px;
-    background: #ffffff;
+    border-top: 6px solid var(--mostaza);
 }
 
 .tech-category h3 {
-    color: var(--color-primario);
-    margin-bottom: 12px;
-    font-size: 18px;
+    color: var(--azul);
 }
 
-.tech-category ul {
-    padding-left: 18px;
-    margin: 0;
-}
+/* FOOTER */
 
-.tech-category li {
-    margin-bottom: 8px;
-    line-height: 1.45;
-    font-size: 15px;
-}
-
-/* Responsive Tech Stack */
-@media (max-width: 600px) {
-    .tech-category {
-        padding: 16px 18px;
-    }
-
-    .tech-category h3 {
-        font-size: 17px;
-    }
-
-    .tech-category li {
-        font-size: 14px;}
+.footer {
+    background: var(--mostaza);
+    color: var(--azul);
 }
