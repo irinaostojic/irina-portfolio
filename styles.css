@@ -81,7 +81,7 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(196, 90, 60, 0.55); /* terracota translúcido */
+    background: rgba(72, 81, 235, 0.55); /* terracota translúcido */
 }
 
 .hero-content {
