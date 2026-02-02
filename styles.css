@@ -17,6 +17,7 @@ body {
     background-color: var(--hueso);
 }
 
+/*NAVBAR*/
 
 .navbar {
     position: fixed;
@@ -27,7 +28,18 @@ body {
     z-index: 100;
 }
 
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
 
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
 
 .nav-links a {
     color: var(--azul);
@@ -40,13 +52,13 @@ body {
     color: var(--terracota);
 }
 
-
+/*HERO*/
 
 .hero {
     height: 88vh;
     background-image: url("https://raw.githubusercontent.com/irinaostojic/irina-portfolio/main/fondo.png");
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
@@ -97,7 +109,7 @@ body {
     color: white;
 }
 
-
+/*SECCIONES*/ 
 .section {
     max-width: 900px;
     margin: 80px auto;
@@ -105,15 +117,40 @@ body {
 }
 
 .section h2 {
+    font-size: 30px;
+    margin-bottom: 18px;
     color: var(--azul);
 }
 
+/*PROYECTOS*/ 
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
 .project-card {
-    border-left: 6px solid var(--terracota);
+    border: 1px solid var(--terracota);
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .project-card h3 {
     color: var(--azul);
+}
+
+.project-card p {
+    margin-bottom: 14px;
+    line-height: 1.5;
+    text-align: left; /* ✅ NO justificado */
 }
 
 .project-card a {
@@ -137,8 +174,9 @@ body {
 }
 
 /* FOOTER */
-
 .footer {
-    background: var(--mostaza);
-    color: var(--azul);
+    border-top: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
 }
